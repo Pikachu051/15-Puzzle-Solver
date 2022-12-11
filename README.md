@@ -1,7 +1,7 @@
-# DNA-Identity-Analyzer
+# 15-Puzzle-Solver
  This is a proposal project for Problem Solving and Computer Programming (PSCP).
- 
- This tool is created to analyze the DNA line, an appearance of protein in molecule levels, locate the beginning of the DNA line, and the end of it.
+
+ This program is created to help solving the 15 Puzzle game problem. Using the Manhattan method, we were able to solve the problem with the fastest way. 
  
 # How to use
  1. Enter your DNA line to analyze.
