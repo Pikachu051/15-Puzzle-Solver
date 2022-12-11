@@ -20,6 +20,21 @@ def time_pos_set(sec):
 def dna_analyze(raw_dna):
     start_time = time.time()
     #insert dna function here
+    
+def main():
+    dnainput = input().upper()[::-1]
+    dnakeep =  ""
+    for x in dnainput:
+        if x == "A":
+            dnakeep += "U"
+        elif x == "T":
+            dnakeep += "A"
+        elif x == "G":
+            dnakeep += "C"
+        elif x == "C":
+            dnakeep += "G"
+    print(dnakeep)
+    
     end_time = time.time()
     elapsed = end_time - start_time
     elapsed = time_pos_set(elapsed)
