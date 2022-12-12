@@ -18,5 +18,3 @@
 
  2. Press 'Solve' button.
  3. Done!
-
-When the program analyzed your DNA line, you can choose to export the result to a text file (.txt) with a specific destination folder.
