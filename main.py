@@ -109,7 +109,6 @@ def Pararell123(check1, check2, check3, check4, count):
         check4 -= 1
         return check1, check2, check3, check4
 def main():
-    """mainfunction"""
     sample_puzzle = np.array([[1, 2, 3, 4] , [5, 6 , 7, 8], [9, 10, 11, 12], [13, 14, 15, 0]])
     sample_puzzle = np.reshape(sample_puzzle,(4,4))
     puzzle_new = np.array([[int(input()) for _ in range(4)], [int(input()) for _ in range(4)], [int(input()) for _ in range(4)], [int(input()) for _ in range(4)]])
