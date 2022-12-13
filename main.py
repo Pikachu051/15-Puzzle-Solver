@@ -80,15 +80,12 @@ def Pararell12(check1, check2, count):
 def Pararell123(check1, check2, check3, count):
     """Pararell"""
     if count % 3 == 0:
-        num_1 += 1
         check1 -= 1
         return check1, check2, check3
     elif count % 3 == 1:
-        num_1 += 1
         check2 -= 1
         return check1, check2, check3
     elif count % 3 == 2:
-        num_1 += 1
         check3 -= 1
         return check1, check2, check3
 
