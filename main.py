@@ -68,8 +68,8 @@ def MAIN_FUNCTION(puzzle):
     total_man = man_1+man_2+man_3+man_4+man_5+man_6+man_7+man_8+man_9+man_10+man_11+man_12+man_13+man_14+man_15
     return total_man
 
-def Pararell12(check1, check2, count):
-    """Pararell"""
+def Parallel12(check1, check2, count):
+    """Parallel"""
     if count % 2 == 0:
         check1 -= 1
         return check1, check2
@@ -77,8 +77,8 @@ def Pararell12(check1, check2, count):
         check2 -= 1
         return check1, check2
 
-def Pararell123(check1, check2, check3, count):
-    """Pararell"""
+def Parallel123(check1, check2, check3, count):
+    """Parallel"""
     if count % 3 == 0:
         check1 -= 1
         return check1, check2, check3
@@ -89,8 +89,8 @@ def Pararell123(check1, check2, check3, count):
         check3 -= 1
         return check1, check2, check3
 
-def Pararell123(check1, check2, check3, check4, count):
-    """Pararell"""
+def Parallel1234(check1, check2, check3, check4, count):
+    """Parallel"""
     if count % 4 == 0:
         check1 -= 1
         return check1, check2, check3, check4
@@ -216,7 +216,7 @@ def main():
                         manhat_check_2 = MAIN_FUNCTION(check_2)
                         manhat_check_1_2 = min(manhat_check_1, manhat_check_2)
                         if manhat_check_1_2 == manhat_check_1 and manhat_check_1_2 == manhat_check_2:
-                            manhat_check_1, manhat_check_2 = Pararell12(manhat_check_1, manhat_check_2, count_1_2)
+                            manhat_check_1, manhat_check_2 = Parallel12(manhat_check_1, manhat_check_2, count_1_2)
                             count_1_2 += 1
                         manhat_check_1_2 = min(manhat_check_1, manhat_check_2)
                         if manhat_check_1_2 == manhat_check_1:
@@ -248,7 +248,7 @@ def main():
                         manhat_check_4 = MAIN_FUNCTION(check_4)
                         manhat_check_3_4 = min(manhat_check_3, manhat_check_4)
                         if manhat_check_3_4 == manhat_check_3 and manhat_check_3_4 == manhat_check_4:
-                            manhat_check_3, manhat_check_4 = Pararell12(manhat_check_3, manhat_check_4, count_3_4)
+                            manhat_check_3, manhat_check_4 = Parallel12(manhat_check_3, manhat_check_4, count_3_4)
                             count_3_4 += 1
                         manhat_check_3_4 = min(manhat_check_3, manhat_check_4)
                         if manhat_check_3_4 == manhat_check_3:
@@ -280,7 +280,7 @@ def main():
                         manhat_check_6 = MAIN_FUNCTION(check_6)
                         manhat_check_5_6 = min(manhat_check_5, manhat_check_6)
                         if manhat_check_5_6 == manhat_check_5 and manhat_check_5_6 == manhat_check_6:
-                            manhat_check_5, manhat_check_6 = Pararell12(manhat_check_5, manhat_check_6, count_5_6)
+                            manhat_check_5, manhat_check_6 = Parallel12(manhat_check_5, manhat_check_6, count_5_6)
                             count_5_6 += 1
                         manhat_check_5_6 = min(manhat_check_5, manhat_check_6)
                         if manhat_check_5_6 == manhat_check_5:
@@ -312,7 +312,7 @@ def main():
                         manhat_check_8 = MAIN_FUNCTION(check_8)
                         manhat_check_7_8 = min(manhat_check_7, manhat_check_8)
                         if manhat_check_7_8 == manhat_check_7 and manhat_check_7_8 == manhat_check_8:
-                            manhat_check_7, manhat_check_8 = Pararell12(manhat_check_7, manhat_check_8, count_7_8)
+                            manhat_check_7, manhat_check_8 = Parallel12(manhat_check_7, manhat_check_8, count_7_8)
                             count_7_8 += 1
                         manhat_check_7_8 = min(manhat_check_7, manhat_check_8)
                         if manhat_check_7_8 == manhat_check_7:
@@ -350,16 +350,16 @@ def main():
                         manhat_check_11 = MAIN_FUNCTION(check_11)
                         manhat_check_9_10_11 = min(manhat_check_9, manhat_check_10, manhat_check_11)
                         if manhat_check_9_10_11 == manhat_check_9 and manhat_check_9_10_11 == manhat_check_10:
-                            manhat_check_9, manhat_check_10 = Pararell12(manhat_check_9, manhat_check_10, count_9_10)
+                            manhat_check_9, manhat_check_10 = Parallel12(manhat_check_9, manhat_check_10, count_9_10)
                             count_9_10 += 1
                         elif manhat_check_9_10_11 == manhat_check_10 and manhat_check_9_10_11 == manhat_check_11:
-                            manhat_check_10, manhat_check_11 = Pararell12(manhat_check_10, manhat_check_11, count_10_11)
+                            manhat_check_10, manhat_check_11 = Parallel12(manhat_check_10, manhat_check_11, count_10_11)
                             count_10_11 += 1
                         elif manhat_check_9_10_11 == manhat_check_9 and manhat_check_9_10_11 == manhat_check_11:
-                            manhat_check_9, manhat_check_11 = Pararell12(manhat_check_9, manhat_check_11, count_9_11)
+                            manhat_check_9, manhat_check_11 = Parallel12(manhat_check_9, manhat_check_11, count_9_11)
                             count_9_11 += 1
                         elif manhat_check_9_10_11 == manhat_check_9 and manhat_check_9_10_11 == manhat_check_10 and manhat_check_9_10_11 == manhat_check_11:
-                            manhat_check_9, manhat_check_10, manhat_check_11 = Pararell123(manhat_check_9, manhat_check_10, manhat_check_11, count_9_10_11)
+                            manhat_check_9, manhat_check_10, manhat_check_11 = Parallel123(manhat_check_9, manhat_check_10, manhat_check_11, count_9_10_11)
                             count_9_10_11 += 1
                         manhat_check_9_10_11 = min(manhat_check_9, manhat_check_10, manhat_check_11)
                         if manhat_check_9_10_11 == manhat_check_9:
@@ -404,16 +404,16 @@ def main():
                         manhat_check_11_2 = MAIN_FUNCTION(check_11_2)
                         manhat_check_9_2_10_11 = min(manhat_check_9_2, manhat_check_10_2, manhat_check_11_2)
                         if manhat_check_9_2_10_11 == manhat_check_9_2 and manhat_check_9_2_10_11 == manhat_check_10_2:
-                            manhat_check_9_2, manhat_check_10_2 = Pararell12(manhat_check_9_2, manhat_check_10_2, count_9_10)
+                            manhat_check_9_2, manhat_check_10_2 = Parallel12(manhat_check_9_2, manhat_check_10_2, count_9_10)
                             count_9_10 += 1
                         elif manhat_check_9_2_10_11 == manhat_check_10_2 and manhat_check_9_2_10_11 == manhat_check_11_2:
-                            manhat_check_10_2, manhat_check_11_2 = Pararell12(manhat_check_10_2, manhat_check_11_2, count_10_11)
+                            manhat_check_10_2, manhat_check_11_2 = Parallel12(manhat_check_10_2, manhat_check_11_2, count_10_11)
                             count_10_11 += 1
                         elif manhat_check_9_2_10_11 == manhat_check_9_2 and manhat_check_9_2_10_11 == manhat_check_11_2:
-                            manhat_check_9_2, manhat_check_11_2 = Pararell12(manhat_check_9_2, manhat_check_11_2, count_9_11)
+                            manhat_check_9_2, manhat_check_11_2 = Parallel12(manhat_check_9_2, manhat_check_11_2, count_9_11)
                             count_9_11 += 1
                         elif manhat_check_9_2_10_11 == manhat_check_9_2 and manhat_check_9_2_10_11 == manhat_check_10_2 and manhat_check_9_2_10_11 == manhat_check_11_2:
-                            manhat_check_9_2, manhat_check_10_2, manhat_check_11_2 = Pararell123(manhat_check_9_2, manhat_check_10_2, manhat_check_11_2, count_9_10_11)
+                            manhat_check_9_2, manhat_check_10_2, manhat_check_11_2 = Parallel123(manhat_check_9_2, manhat_check_10_2, manhat_check_11_2, count_9_10_11)
                             count_9_10_11 += 1
                         manhat_check_9_2_10_11 = min(manhat_check_9_2, manhat_check_10_2, manhat_check_11_2)
                         if manhat_check_9_2_10_11 == manhat_check_9_2:
@@ -458,16 +458,16 @@ def main():
                         manhat_check_14 = MAIN_FUNCTION(check_14)
                         manhat_check_12_13_14 = min(manhat_check_12, manhat_check_13, manhat_check_14)
                         if manhat_check_12_13_14 == manhat_check_12 and manhat_check_12_13_14 == manhat_check_13:
-                            manhat_check_12, manhat_check_13 = Pararell12(manhat_check_12, manhat_check_13, count_12_13)
+                            manhat_check_12, manhat_check_13 = Parallel12(manhat_check_12, manhat_check_13, count_12_13)
                             count_12_13 += 1
                         elif manhat_check_12_13_14 == manhat_check_13 and manhat_check_12_13_14 == manhat_check_14:
-                            manhat_check_13, manhat_check_14 = Pararell12(manhat_check_13, manhat_check_14, count_13_14)
+                            manhat_check_13, manhat_check_14 = Parallel12(manhat_check_13, manhat_check_14, count_13_14)
                             count_13_14 += 1
                         elif manhat_check_12_13_14 == manhat_check_12 and manhat_check_12_13_14 == manhat_check_14:
-                            manhat_check_12, manhat_check_14 = Pararell12(manhat_check_12, manhat_check_14, count_12_14)
+                            manhat_check_12, manhat_check_14 = Parallel12(manhat_check_12, manhat_check_14, count_12_14)
                             count_12_14 += 1
                         elif manhat_check_12_13_14 == manhat_check_12 and manhat_check_12_13_14 == manhat_check_13 and manhat_check_12_13_14 == manhat_check_14:
-                            manhat_check_12, manhat_check_13, manhat_check_14 = Pararell123(manhat_check_12, manhat_check_13, manhat_check_14, count_12_13_14)
+                            manhat_check_12, manhat_check_13, manhat_check_14 = Parallel123(manhat_check_12, manhat_check_13, manhat_check_14, count_12_13_14)
                             count_12_13_14 += 1
                         manhat_check_12_13_14 = min(manhat_check_12, manhat_check_13, manhat_check_14)
                         if manhat_check_12_13_14 == manhat_check_12:
@@ -512,16 +512,16 @@ def main():
                         manhat_check_14_2 = MAIN_FUNCTION(check_14_2)
                         manhat_check_12_2_13_14 = min(manhat_check_12_2, manhat_check_13_2, manhat_check_14_2)
                         if manhat_check_12_2_13_14 == manhat_check_12_2 and manhat_check_12_2_13_14 == manhat_check_13_2:
-                            manhat_check_12_2, manhat_check_13_2 = Pararell12(manhat_check_12_2, manhat_check_13_2, count_12_13_2)
+                            manhat_check_12_2, manhat_check_13_2 = Parallel12(manhat_check_12_2, manhat_check_13_2, count_12_13_2)
                             count_12_13_2 += 1
                         elif manhat_check_12_2_13_14 == manhat_check_13_2 and manhat_check_12_2_13_14 == manhat_check_14_2:
-                            manhat_check_13_2, manhat_check_14_2 = Pararell12(manhat_check_13_2, manhat_check_14_2, count_13_14_2)
+                            manhat_check_13_2, manhat_check_14_2 = Parallel12(manhat_check_13_2, manhat_check_14_2, count_13_14_2)
                             count_13_14_2 += 1
                         elif manhat_check_12_2_13_14 == manhat_check_12_2 and manhat_check_12_2_13_14 == manhat_check_14_2:
-                            manhat_check_12_2, manhat_check_14_2 = Pararell12(manhat_check_12_2, manhat_check_14_2, count_12_14_2)
+                            manhat_check_12_2, manhat_check_14_2 = Parallel12(manhat_check_12_2, manhat_check_14_2, count_12_14_2)
                             count_12_14_2 += 1
                         elif manhat_check_12_2_13_14 == manhat_check_12_2 and manhat_check_12_2_13_14 == manhat_check_13_2 and manhat_check_12_2_13_14 == manhat_check_14_2:
-                            manhat_check_12_2, manhat_check_13_2, manhat_check_14_2 = Pararell123(manhat_check_12_2, manhat_check_13_2, manhat_check_14_2, count_12_13_14_2)
+                            manhat_check_12_2, manhat_check_13_2, manhat_check_14_2 = Parallel123(manhat_check_12_2, manhat_check_13_2, manhat_check_14_2, count_12_13_14_2)
                             count_12_13_14_2 += 1
                         manhat_check_12_2_13_14 = min(manhat_check_12_2, manhat_check_13_2, manhat_check_14_2)
                         if manhat_check_12_2_13_14 == manhat_check_12_2:
@@ -566,16 +566,16 @@ def main():
                         manhat_check_17 = MAIN_FUNCTION(check_17)
                         manhat_check_15_16_17 = min(manhat_check_15, manhat_check_16, manhat_check_17)
                         if manhat_check_15_16_17 == manhat_check_15 and manhat_check_15_16_17 == manhat_check_16:
-                            manhat_check_15, manhat_check_16 = Pararell12(manhat_check_15, manhat_check_16, count_15_16)
+                            manhat_check_15, manhat_check_16 = Parallel12(manhat_check_15, manhat_check_16, count_15_16)
                             count_15_16 += 1
                         elif manhat_check_15_16_17 == manhat_check_16 and manhat_check_15_16_17 == manhat_check_17:
-                            manhat_check_16, manhat_check_17 = Pararell12(manhat_check_16, manhat_check_17, count_16_17)
+                            manhat_check_16, manhat_check_17 = Parallel12(manhat_check_16, manhat_check_17, count_16_17)
                             count_16_17 += 1
                         elif manhat_check_15_16_17 == manhat_check_15 and manhat_check_15_16_17 == manhat_check_17:
-                            manhat_check_15, manhat_check_17 = Pararell12(manhat_check_15, manhat_check_17, count_15_17)
+                            manhat_check_15, manhat_check_17 = Parallel12(manhat_check_15, manhat_check_17, count_15_17)
                             count_15_17 += 1
                         elif manhat_check_15_16_17 == manhat_check_15 and manhat_check_15_16_17 == manhat_check_16 and manhat_check_15_16_17 == manhat_check_17:
-                            manhat_check_15, manhat_check_16, manhat_check_17 = Pararell123(manhat_check_15, manhat_check_16, manhat_check_17, count_15_16_17)
+                            manhat_check_15, manhat_check_16, manhat_check_17 = Parallel123(manhat_check_15, manhat_check_16, manhat_check_17, count_15_16_17)
                             count_15_16_17 += 1
                         manhat_check_15_16_17 = min(manhat_check_15, manhat_check_16, manhat_check_17)
                         if manhat_check_15_16_17 == manhat_check_15:
@@ -620,16 +620,16 @@ def main():
                         manhat_check_17_2 = MAIN_FUNCTION(check_17_2)
                         manhat_check_15_2_16_17 = min(manhat_check_15_2, manhat_check_16_2, manhat_check_17_2)
                         if manhat_check_15_2_16_17 == manhat_check_15_2 and manhat_check_15_2_16_17 == manhat_check_16_2:
-                            manhat_check_15_2, manhat_check_16_2 = Pararell12(manhat_check_15_2, manhat_check_16_2, count_15_16_2)
+                            manhat_check_15_2, manhat_check_16_2 = Parallel12(manhat_check_15_2, manhat_check_16_2, count_15_16_2)
                             count_15_16_2 += 1
                         elif manhat_check_15_2_16_17 == manhat_check_16_2 and manhat_check_15_2_16_17 == manhat_check_17_2:
-                            manhat_check_16_2, manhat_check_17_2 = Pararell12(manhat_check_16_2, manhat_check_17_2, count_16_17_2)
+                            manhat_check_16_2, manhat_check_17_2 = Parallel12(manhat_check_16_2, manhat_check_17_2, count_16_17_2)
                             count_16_17_2 += 1
                         elif manhat_check_15_2_16_17 == manhat_check_15_2 and manhat_check_15_2_16_17 == manhat_check_17_2:
-                            manhat_check_15_2, manhat_check_17_2 = Pararell12(manhat_check_15_2, manhat_check_17_2, count_15_17)
+                            manhat_check_15_2, manhat_check_17_2 = Parallel12(manhat_check_15_2, manhat_check_17_2, count_15_17)
                             count_15_17 += 1
                         elif manhat_check_15_2_16_17 == manhat_check_15_2 and manhat_check_15_2_16_17 == manhat_check_16_2 and manhat_check_15_2_16_17 == manhat_check_17_2:
-                            manhat_check_15_2, manhat_check_16_2, manhat_check_17_2 = Pararell123(manhat_check_15_2, manhat_check_16_2, manhat_check_17_2, count_15_16_17_2)
+                            manhat_check_15_2, manhat_check_16_2, manhat_check_17_2 = Parallel123(manhat_check_15_2, manhat_check_16_2, manhat_check_17_2, count_15_16_17_2)
                             count_15_16_17_2 += 1
                         manhat_check_15_2_16_17 = min(manhat_check_15_2, manhat_check_16_2, manhat_check_17_2)
                         if manhat_check_15_2_16_17 == manhat_check_15_2:
@@ -674,16 +674,16 @@ def main():
                         manhat_check_20 = MAIN_FUNCTION(check_20)
                         manhat_check_18_19_20 = min(manhat_check_18, manhat_check_19, manhat_check_20)
                         if manhat_check_18_19_20 == manhat_check_18 and manhat_check_18_19_20== manhat_check_19:
-                            manhat_check_18, manhat_check_19 = Pararell12(manhat_check_18, manhat_check_19, count_18_19)
+                            manhat_check_18, manhat_check_19 = Parallel12(manhat_check_18, manhat_check_19, count_18_19)
                             count_18_19 += 1
                         elif manhat_check_18_19_20 == manhat_check_19 and manhat_check_18_19_20 == manhat_check_20:
-                            manhat_check_19, manhat_check_20 = Pararell12(manhat_check_19, manhat_check_20, count_19_20)
+                            manhat_check_19, manhat_check_20 = Parallel12(manhat_check_19, manhat_check_20, count_19_20)
                             count_19_20 += 1
                         elif manhat_check_18_19_20 == manhat_check_18 and manhat_check_18_19_20 == manhat_check_20:
-                            manhat_check_18, manhat_check_20 = Pararell12(manhat_check_18, manhat_check_20, count_18_20)
+                            manhat_check_18, manhat_check_20 = Parallel12(manhat_check_18, manhat_check_20, count_18_20)
                             count_18_20 += 1
                         elif manhat_check_18_19_20 == manhat_check_18 and manhat_check_18_19_20 == manhat_check_19 and manhat_check_18_19_20  == manhat_check_20:
-                            manhat_check_18, manhat_check_19, manhat_check_20 = Pararell123(manhat_check_18, manhat_check_19, manhat_check_20, count_18_19_20)
+                            manhat_check_18, manhat_check_19, manhat_check_20 = Parallel123(manhat_check_18, manhat_check_19, manhat_check_20, count_18_19_20)
                             count_18_19_20 += 1
                         manhat_check_18_19_20 = min(manhat_check_18, manhat_check_19, manhat_check_20)
                         if manhat_check_18_19_20 == manhat_check_18:
@@ -728,16 +728,16 @@ def main():
                         manhat_check_20_2 = MAIN_FUNCTION(check_20_2)
                         manhat_check_18_2_19_20 = min(manhat_check_18_2, manhat_check_19_2, manhat_check_20_2)
                         if manhat_check_18_2_19_20 == manhat_check_18_2 and manhat_check_18_2_19_20== manhat_check_19_2:
-                            manhat_check_18_2, manhat_check_19_2 = Pararell12(manhat_check_18_2, manhat_check_19_2, count_18_19_2)
+                            manhat_check_18_2, manhat_check_19_2 = Parallel12(manhat_check_18_2, manhat_check_19_2, count_18_19_2)
                             count_18_19_2 += 1
                         elif manhat_check_18_2_19_20 == manhat_check_19_2 and manhat_check_18_2_19_20 == manhat_check_20_2:
-                            manhat_check_19_2, manhat_check_20_2 = Pararell12(manhat_check_19_2, manhat_check_20_2, count_19_20_2)
+                            manhat_check_19_2, manhat_check_20_2 = Parallel12(manhat_check_19_2, manhat_check_20_2, count_19_20_2)
                             count_19_20_2 += 1
                         elif manhat_check_18_2_19_20 == manhat_check_18_2 and manhat_check_18_2_19_20 == manhat_check_20_2:
-                            manhat_check_18_2, manhat_check_20_2 = Pararell12(manhat_check_18_2, manhat_check_20_2, count_18_20_2)
+                            manhat_check_18_2, manhat_check_20_2 = Parallel12(manhat_check_18_2, manhat_check_20_2, count_18_20_2)
                             count_18_20_2 += 1
                         elif manhat_check_18_2_19_20 == manhat_check_18_2 and manhat_check_18_2_19_20 == manhat_check_19_2 and manhat_check_18_2_19_20  == manhat_check_20_2:
-                            manhat_check_18_2, manhat_check_19_2, manhat_check_20_2 = Pararell123(manhat_check_18_2, manhat_check_19_2, manhat_check_20_2, count_18_19_20_2)
+                            manhat_check_18_2, manhat_check_19_2, manhat_check_20_2 = Parallel123(manhat_check_18_2, manhat_check_19_2, manhat_check_20_2, count_18_19_20_2)
                             count_18_19_20_2 += 1
                         manhat_check_18_2_19_20 = min(manhat_check_18_2, manhat_check_19_2, manhat_check_20_2)
                         if manhat_check_18_2_19_20 == manhat_check_18_2:
@@ -788,37 +788,37 @@ def main():
                         manhat_check_24 = MAIN_FUNCTION(check_24)
                         manhat_check_21_22_23_24 = min(manhat_check_21, manhat_check_22, manhat_check_23, manhat_check_24)
                         if manhat_check_21_22_23_24 == manhat_check_21 and manhat_check_21_22_23_24 == manhat_check_22:
-                            manhat_check_21, manhat_check_22 = Pararell12(manhat_check_21, manhat_check_22, count_21_22)
+                            manhat_check_21, manhat_check_22 = Parallel12(manhat_check_21, manhat_check_22, count_21_22)
                             count_21_22 += 1
                         elif manhat_check_21_22_23_24 == manhat_check_21 and manhat_check_21_22_23_24 == manhat_check_23:
-                            manhat_check_21, manhat_check_23 = Pararell12(manhat_check_21, manhat_check_23, count_21_23)
+                            manhat_check_21, manhat_check_23 = Parallel12(manhat_check_21, manhat_check_23, count_21_23)
                             count_21_23 += 1
                         elif manhat_check_21_22_23_24 == manhat_check_21 and manhat_check_21_22_23_24 == manhat_check_24:
-                            manhat_check_21, manhat_check_24 = Pararell12(manhat_check_21, manhat_check_24, count_21_24)
+                            manhat_check_21, manhat_check_24 = Parallel12(manhat_check_21, manhat_check_24, count_21_24)
                             count_21_24 += 1
                         elif manhat_check_21_22_23_24 == manhat_check_22 and manhat_check_21_22_23_24 == manhat_check_23:
-                            manhat_check_22, manhat_check_23 = Pararell12(manhat_check_22, manhat_check_23, count_22_23)
+                            manhat_check_22, manhat_check_23 = Parallel12(manhat_check_22, manhat_check_23, count_22_23)
                             count_22_23 += 1
                         elif manhat_check_21_22_23_24 == manhat_check_22 and manhat_check_21_22_23_24 == manhat_check_24:
-                            manhat_check_22, manhat_check_24 = Pararell12(manhat_check_22, manhat_check_24, count_22_24)
+                            manhat_check_22, manhat_check_24 = Parallel12(manhat_check_22, manhat_check_24, count_22_24)
                             count_22_24 += 1
                         elif manhat_check_21_22_23_24 == manhat_check_23 and manhat_check_21_22_23_24 == manhat_check_24:
-                            manhat_check_23, manhat_check_24 = Pararell12(manhat_check_23, manhat_check_24, count_23_24)
+                            manhat_check_23, manhat_check_24 = Parallel12(manhat_check_23, manhat_check_24, count_23_24)
                             count_23_24 += 1
                         elif manhat_check_21_22_23_24 == manhat_check_21 and manhat_check_21_22_23_24 == manhat_check_22 and manhat_check_21_22_23_24 == manhat_check_23:
-                            manhat_check_21, manhat_check_22, manhat_check_23 = Pararell123(manhat_check_21, manhat_check_22, manhat_check_23, count_21_22_23)
+                            manhat_check_21, manhat_check_22, manhat_check_23 = Parallel123(manhat_check_21, manhat_check_22, manhat_check_23, count_21_22_23)
                             count_21_22_23 += 1
                         elif manhat_check_21_22_23_24 == manhat_check_21 and manhat_check_21_22_23_24 == manhat_check_23 and manhat_check_21_22_23_24 == manhat_check_24:
-                            manhat_check_21, manhat_check_23, manhat_check_24 = Pararell123(manhat_check_21, manhat_check_23, manhat_check_24, count_21_23_24)
+                            manhat_check_21, manhat_check_23, manhat_check_24 = Parallel123(manhat_check_21, manhat_check_23, manhat_check_24, count_21_23_24)
                             count_21_23_24 += 1
                         elif manhat_check_21_22_23_24 == manhat_check_21 and manhat_check_21_22_23_24 == manhat_check_22 and manhat_check_21_22_23_24 == manhat_check_24:
-                            manhat_check_21, manhat_check_22, manhat_check_24 = Pararell123(manhat_check_21, manhat_check_22, manhat_check_24, count_21_22_24)
+                            manhat_check_21, manhat_check_22, manhat_check_24 = Parallel123(manhat_check_21, manhat_check_22, manhat_check_24, count_21_22_24)
                             count_21_22_24 += 1
                         elif manhat_check_21_22_23_24 == manhat_check_22 and manhat_check_21_22_23_24== manhat_check_23 and manhat_check_21_22_23_24== manhat_check_24:
-                            manhat_check_22, manhat_check_23, manhat_check_24 = Pararell123(manhat_check_22, manhat_check_23, manhat_check_24, count_22_23_24)
+                            manhat_check_22, manhat_check_23, manhat_check_24 = Parallel123(manhat_check_22, manhat_check_23, manhat_check_24, count_22_23_24)
                             count_22_23_24 += 1
                         elif manhat_check_21_22_23_24 == manhat_check_21 and manhat_check_21_22_23_24 == manhat_check_22 and manhat_check_21_22_23_24 == manhat_check_23 and manhat_check_21_22_23_24 == manhat_check_24:
-                            manhat_check_21, manhat_check_22, manhat_check_23, manhat_check_24 = Pararell1234(manhat_check_21, manhat_check_22, manhat_check_23, manhat_check_24, count_21_22_23_24)
+                            manhat_check_21, manhat_check_22, manhat_check_23, manhat_check_24 = Parallel1234(manhat_check_21, manhat_check_22, manhat_check_23, manhat_check_24, count_21_22_23_24)
                             count_21_22_23_24 += 1
                         manhat_check_21_22_23_24 = min(manhat_check_21, manhat_check_22, manhat_check_23, manhat_check_24)
                         if manhat_check_21_22_23_24 == manhat_check_21:
@@ -876,37 +876,37 @@ def main():
                         manhat_check_24_2 = MAIN_FUNCTION(check_24_2)
                         manhat_check_21_2_22_23_24 = min(manhat_check_21_2, manhat_check_22_2, manhat_check_23_2, manhat_check_24_2)
                         if manhat_check_21_2_22_23_24 == manhat_check_21_2 and manhat_check_21_2_22_23_24 == manhat_check_22_2:
-                            manhat_check_21_2, manhat_check_22_2 = Pararell12(manhat_check_21_2, manhat_check_22_2, count_21_22_2)
+                            manhat_check_21_2, manhat_check_22_2 = Parallel12(manhat_check_21_2, manhat_check_22_2, count_21_22_2)
                             count_21_22_2 += 1
                         elif manhat_check_21_2_22_23_24 == manhat_check_21_2 and manhat_check_21_2_22_23_24 == manhat_check_23_2:
-                            manhat_check_21_2, manhat_check_23_2 = Pararell12(manhat_check_21_2, manhat_check_23_2, count_21_23_2)
+                            manhat_check_21_2, manhat_check_23_2 = Parallel12(manhat_check_21_2, manhat_check_23_2, count_21_23_2)
                             count_21_23_2 += 1
                         elif manhat_check_21_2_22_23_24 == manhat_check_21_2 and manhat_check_21_2_22_23_24 == manhat_check_24_2:
-                            manhat_check_21_2, manhat_check_24_2 = Pararell12(manhat_check_21_2, manhat_check_24_2, count_21_24_2)
+                            manhat_check_21_2, manhat_check_24_2 = Parallel12(manhat_check_21_2, manhat_check_24_2, count_21_24_2)
                             count_21_24_2 += 1
                         elif manhat_check_21_2_22_23_24 == manhat_check_22_2 and manhat_check_21_2_22_23_24 == manhat_check_23_2:
-                            manhat_check_22_2, manhat_check_23_2 = Pararell12(manhat_check_22_2, manhat_check_23_2, count_22_23_2)
+                            manhat_check_22_2, manhat_check_23_2 = Parallel12(manhat_check_22_2, manhat_check_23_2, count_22_23_2)
                             count_22_23_2 += 1
                         elif manhat_check_21_2_22_23_24 == manhat_check_22_2 and manhat_check_21_2_22_23_24 == manhat_check_24_2:
-                            manhat_check_22_2, manhat_check_24_2 = Pararell12(manhat_check_22_2, manhat_check_24_2, count_22_24_2)
+                            manhat_check_22_2, manhat_check_24_2 = Parallel12(manhat_check_22_2, manhat_check_24_2, count_22_24_2)
                             count_22_24_2 += 1
                         elif manhat_check_21_2_22_23_24 == manhat_check_23_2 and manhat_check_21_2_22_23_24 == manhat_check_24_2:
-                            manhat_check_23_2, manhat_check_24_2 = Pararell12(manhat_check_23_2, manhat_check_24_2, count_23_24_2)
+                            manhat_check_23_2, manhat_check_24_2 = Parallel12(manhat_check_23_2, manhat_check_24_2, count_23_24_2)
                             count_23_24_2 += 1
                         elif manhat_check_21_2_22_23_24 == manhat_check_21_2 and manhat_check_21_2_22_23_24 == manhat_check_22_2 and manhat_check_21_2_22_23_24 == manhat_check_23_2:
-                            manhat_check_21_2, manhat_check_22_2, manhat_check_23_2 = Pararell123(manhat_check_21_2, manhat_check_22_2, manhat_check_23_2, count_21_22_23_2)
+                            manhat_check_21_2, manhat_check_22_2, manhat_check_23_2 = Parallel123(manhat_check_21_2, manhat_check_22_2, manhat_check_23_2, count_21_22_23_2)
                             count_21_22_23_2 += 1
                         elif manhat_check_21_2_22_23_24 == manhat_check_21_2 and manhat_check_21_2_22_23_24 == manhat_check_23_2 and manhat_check_21_2_22_23_24 == manhat_check_24_2:
-                            manhat_check_21_2, manhat_check_23_2, manhat_check_24_2 = Pararell123(manhat_check_21_2, manhat_check_23_2, manhat_check_24_2, count_21_23_24_2)
+                            manhat_check_21_2, manhat_check_23_2, manhat_check_24_2 = Parallel123(manhat_check_21_2, manhat_check_23_2, manhat_check_24_2, count_21_23_24_2)
                             count_21_23_24_2 += 1
                         elif manhat_check_21_2_22_23_24 == manhat_check_21_2 and manhat_check_21_2_22_23_24 == manhat_check_22_2 and manhat_check_21_2_22_23_24 == manhat_check_24_2:
-                            manhat_check_21_2, manhat_check_22_2, manhat_check_24_2 = Pararell123(manhat_check_21_2, manhat_check_22_2, manhat_check_24_2, count_21_22_24_2)
+                            manhat_check_21_2, manhat_check_22_2, manhat_check_24_2 = Parallel123(manhat_check_21_2, manhat_check_22_2, manhat_check_24_2, count_21_22_24_2)
                             count_21_22_24_2 += 1
                         elif manhat_check_21_2_22_23_24 == manhat_check_22_2 and manhat_check_21_2_22_23_24== manhat_check_23_2 and manhat_check_21_2_22_23_24== manhat_check_24_2:
-                            manhat_check_22_2, manhat_check_23_2, manhat_check_24_2 = Pararell123(manhat_check_22_2, manhat_check_23_2, manhat_check_24_2, count_22_23_24_2)
+                            manhat_check_22_2, manhat_check_23_2, manhat_check_24_2 = Parallel123(manhat_check_22_2, manhat_check_23_2, manhat_check_24_2, count_22_23_24_2)
                             count_22_23_24_2 += 1
                         elif manhat_check_21_2_22_23_24 == manhat_check_21_2 and manhat_check_21_2_22_23_24 == manhat_check_22_2 and manhat_check_21_2_22_23_24 == manhat_check_23_2 and manhat_check_21_2_22_23_24 == manhat_check_24_2:
-                            manhat_check_21_2, manhat_check_22_2, manhat_check_23_2, manhat_check_24_2 = Pararell1234(manhat_check_21_2, manhat_check_22_2, manhat_check_23_2, manhat_check_24_2, count_21_22_23_24_2)
+                            manhat_check_21_2, manhat_check_22_2, manhat_check_23_2, manhat_check_24_2 = Parallel1234(manhat_check_21_2, manhat_check_22_2, manhat_check_23_2, manhat_check_24_2, count_21_22_23_24_2)
                             count_21_22_23_24_2 += 1
                         manhat_check_21_2_22_23_24 = min(manhat_check_21_2, manhat_check_22_2, manhat_check_23_2, manhat_check_24_2)
                         if manhat_check_21_2_22_23_24 == manhat_check_21_2:
@@ -964,37 +964,37 @@ def main():
                         manhat_check_24_3 = MAIN_FUNCTION(check_24_3)
                         manhat_check_21_3_22_23_24 = min(manhat_check_21_3, manhat_check_22_3, manhat_check_23_3, manhat_check_24_3)
                         if manhat_check_21_3_22_23_24 == manhat_check_21_3 and manhat_check_21_3_22_23_24 == manhat_check_22_3:
-                            manhat_check_21_3, manhat_check_22_3 = Pararell12(manhat_check_21_3, manhat_check_22_3, count_21_22_3)
+                            manhat_check_21_3, manhat_check_22_3 = Parallel12(manhat_check_21_3, manhat_check_22_3, count_21_22_3)
                             count_21_22_3 += 1
                         elif manhat_check_21_3_22_23_24 == manhat_check_21_3 and manhat_check_21_3_22_23_24 == manhat_check_23_3:
-                            manhat_check_21_3, manhat_check_23_3 = Pararell12(manhat_check_21_3, manhat_check_23_3, count_21_23_3)
+                            manhat_check_21_3, manhat_check_23_3 = Parallel12(manhat_check_21_3, manhat_check_23_3, count_21_23_3)
                             count_21_23_3 += 1
                         elif manhat_check_21_3_22_23_24 == manhat_check_21_3 and manhat_check_21_3_22_23_24 == manhat_check_24_3:
-                            manhat_check_21_3, manhat_check_24_3 = Pararell12(manhat_check_21_3, manhat_check_24_3, count_21_24_3)
+                            manhat_check_21_3, manhat_check_24_3 = Parallel12(manhat_check_21_3, manhat_check_24_3, count_21_24_3)
                             count_21_24_3 += 1
                         elif manhat_check_21_3_22_23_24 == manhat_check_22_3 and manhat_check_21_3_22_23_24 == manhat_check_23_3:
-                            manhat_check_22_3, manhat_check_23_3 = Pararell12(manhat_check_22_3, manhat_check_23_3, count_22_23_3)
+                            manhat_check_22_3, manhat_check_23_3 = Parallel12(manhat_check_22_3, manhat_check_23_3, count_22_23_3)
                             count_22_23_3 += 1
                         elif manhat_check_21_3_22_23_24 == manhat_check_22_3 and manhat_check_21_3_22_23_24 == manhat_check_24_3:
-                            manhat_check_22_3, manhat_check_24_3 = Pararell12(manhat_check_22_3, manhat_check_24_3, count_22_24_3)
+                            manhat_check_22_3, manhat_check_24_3 = Parallel12(manhat_check_22_3, manhat_check_24_3, count_22_24_3)
                             count_22_24_3 += 1
                         elif manhat_check_21_3_22_23_24 == manhat_check_23_3 and manhat_check_21_3_22_23_24 == manhat_check_24_3:
-                            manhat_check_23_3, manhat_check_24_3 = Pararell12(manhat_check_23_3, manhat_check_24_3, count_23_24_3)
+                            manhat_check_23_3, manhat_check_24_3 = Parallel12(manhat_check_23_3, manhat_check_24_3, count_23_24_3)
                             count_23_24_3 += 1
                         elif manhat_check_21_3_22_23_24 == manhat_check_21_3 and manhat_check_21_3_22_23_24 == manhat_check_22_3 and manhat_check_21_3_22_23_24 == manhat_check_23_3:
-                            manhat_check_21_3, manhat_check_22_3, manhat_check_23_3 = Pararell123(manhat_check_21_3, manhat_check_22_3, manhat_check_23_3, count_21_22_23_3)
+                            manhat_check_21_3, manhat_check_22_3, manhat_check_23_3 = Parallel123(manhat_check_21_3, manhat_check_22_3, manhat_check_23_3, count_21_22_23_3)
                             count_21_22_23_3 += 1
                         elif manhat_check_21_3_22_23_24 == manhat_check_21_3 and manhat_check_21_3_22_23_24 == manhat_check_23_3 and manhat_check_21_3_22_23_24 == manhat_check_24_3:
-                            manhat_check_21_3, manhat_check_23_3, manhat_check_24_3 = Pararell123(manhat_check_21_3, manhat_check_23_3, manhat_check_24_3, count_21_23_24_3)
+                            manhat_check_21_3, manhat_check_23_3, manhat_check_24_3 = Parallel123(manhat_check_21_3, manhat_check_23_3, manhat_check_24_3, count_21_23_24_3)
                             count_21_23_24_3 += 1
                         elif manhat_check_21_3_22_23_24 == manhat_check_21_3 and manhat_check_21_3_22_23_24 == manhat_check_22_3 and manhat_check_21_3_22_23_24 == manhat_check_24_3:
-                            manhat_check_21_3, manhat_check_22_3, manhat_check_24_3 = Pararell123(manhat_check_21_3, manhat_check_22_3, manhat_check_24_3, count_21_22_24_3)
+                            manhat_check_21_3, manhat_check_22_3, manhat_check_24_3 = Parallel123(manhat_check_21_3, manhat_check_22_3, manhat_check_24_3, count_21_22_24_3)
                             count_21_22_24_3 += 1
                         elif manhat_check_21_3_22_23_24 == manhat_check_22_3 and manhat_check_21_3_22_23_24== manhat_check_23_3 and manhat_check_21_3_22_23_24== manhat_check_24_3:
-                            manhat_check_22_3, manhat_check_23_3, manhat_check_24_3 = Pararell123(manhat_check_22_3, manhat_check_23_3, manhat_check_24_3, count_22_23_24_3)
+                            manhat_check_22_3, manhat_check_23_3, manhat_check_24_3 = Parallel123(manhat_check_22_3, manhat_check_23_3, manhat_check_24_3, count_22_23_24_3)
                             count_22_23_24_3 += 1
                         elif manhat_check_21_3_22_23_24 == manhat_check_21_3 and manhat_check_21_3_22_23_24 == manhat_check_22_3 and manhat_check_21_3_22_23_24 == manhat_check_23_3 and manhat_check_21_3_22_23_24 == manhat_check_24_3:
-                            manhat_check_21_3, manhat_check_22_3, manhat_check_23_3, manhat_check_24_3 = Pararell1234(manhat_check_21_3, manhat_check_22_3, manhat_check_23_3, manhat_check_24_3, count_21_22_23_24_3)
+                            manhat_check_21_3, manhat_check_22_3, manhat_check_23_3, manhat_check_24_3 = Parallel1234(manhat_check_21_3, manhat_check_22_3, manhat_check_23_3, manhat_check_24_3, count_21_22_23_24_3)
                             count_21_22_23_24_3 += 1
                         manhat_check_21_3_22_23_24 = min(manhat_check_21_3, manhat_check_22_3, manhat_check_23_3, manhat_check_24_3)
                         if manhat_check_21_3_22_23_24 == manhat_check_21_3:
@@ -1052,37 +1052,37 @@ def main():
                         manhat_check_24_4 = MAIN_FUNCTION(check_24_4)
                         manhat_check_21_4_22_23_24 = min(manhat_check_21_4, manhat_check_22_4, manhat_check_23_4, manhat_check_24_4)
                         if manhat_check_21_4_22_23_24 == manhat_check_21_4 and manhat_check_21_4_22_23_24 == manhat_check_22_4:
-                            manhat_check_21_4, manhat_check_22_4 = Pararell12(manhat_check_21_4, manhat_check_22_4, count_21_22_4)
+                            manhat_check_21_4, manhat_check_22_4 = Parallel12(manhat_check_21_4, manhat_check_22_4, count_21_22_4)
                             count_21_22_4 += 1
                         elif manhat_check_21_4_22_23_24 == manhat_check_21_4 and manhat_check_21_4_22_23_24 == manhat_check_23_4:
-                            manhat_check_21_4, manhat_check_23_4 = Pararell12(manhat_check_21_4, manhat_check_23_4, count_21_23_4)
+                            manhat_check_21_4, manhat_check_23_4 = Parallel12(manhat_check_21_4, manhat_check_23_4, count_21_23_4)
                             count_21_23_4 += 1
                         elif manhat_check_21_4_22_23_24 == manhat_check_21_4 and manhat_check_21_4_22_23_24 == manhat_check_24_4:
-                            manhat_check_21_4, manhat_check_24_4 = Pararell12(manhat_check_21_4, manhat_check_24_4, count_21_24_4)
+                            manhat_check_21_4, manhat_check_24_4 = Parallel12(manhat_check_21_4, manhat_check_24_4, count_21_24_4)
                             count_21_24_4 += 1
                         elif manhat_check_21_4_22_23_24 == manhat_check_22_4 and manhat_check_21_4_22_23_24 == manhat_check_23_4:
-                            manhat_check_22_4, manhat_check_23_4 = Pararell12(manhat_check_22_4, manhat_check_23_4, count_22_23_4)
+                            manhat_check_22_4, manhat_check_23_4 = Parallel12(manhat_check_22_4, manhat_check_23_4, count_22_23_4)
                             count_22_23_4 += 1
                         elif manhat_check_21_4_22_23_24 == manhat_check_22_4 and manhat_check_21_4_22_23_24 == manhat_check_24_4:
-                            manhat_check_22_4, manhat_check_24_4 = Pararell12(manhat_check_22_4, manhat_check_24_4, count_22_24_4)
+                            manhat_check_22_4, manhat_check_24_4 = Parallel12(manhat_check_22_4, manhat_check_24_4, count_22_24_4)
                             count_22_24_4 += 1
                         elif manhat_check_21_4_22_23_24 == manhat_check_23_4 and manhat_check_21_4_22_23_24 == manhat_check_24_4:
-                            manhat_check_23_4, manhat_check_24_4 = Pararell12(manhat_check_23_4, manhat_check_24_4, count_23_24_4)
+                            manhat_check_23_4, manhat_check_24_4 = Parallel12(manhat_check_23_4, manhat_check_24_4, count_23_24_4)
                             count_23_24_4 += 1
                         elif manhat_check_21_4_22_23_24 == manhat_check_21_4 and manhat_check_21_4_22_23_24 == manhat_check_22_4 and manhat_check_21_4_22_23_24 == manhat_check_23_4:
-                            manhat_check_21_4, manhat_check_22_4, manhat_check_23_4 = Pararell123(manhat_check_21_4, manhat_check_22_4, manhat_check_23_4, count_21_22_23_4)
+                            manhat_check_21_4, manhat_check_22_4, manhat_check_23_4 = Parallel123(manhat_check_21_4, manhat_check_22_4, manhat_check_23_4, count_21_22_23_4)
                             count_21_22_23_4 += 1
                         elif manhat_check_21_4_22_23_24 == manhat_check_21_4 and manhat_check_21_4_22_23_24 == manhat_check_23_4 and manhat_check_21_4_22_23_24 == manhat_check_24_4:
-                            manhat_check_21_4, manhat_check_23_4, manhat_check_24_4 = Pararell123(manhat_check_21_4, manhat_check_23_4, manhat_check_24_4, count_21_23_24_4)
+                            manhat_check_21_4, manhat_check_23_4, manhat_check_24_4 = Parallel123(manhat_check_21_4, manhat_check_23_4, manhat_check_24_4, count_21_23_24_4)
                             count_21_23_24_4 += 1
                         elif manhat_check_21_4_22_23_24 == manhat_check_21_4 and manhat_check_21_4_22_23_24 == manhat_check_22_4 and manhat_check_21_4_22_23_24 == manhat_check_24_4:
-                            manhat_check_21_4, manhat_check_22_4, manhat_check_24_4 = Pararell123(manhat_check_21_4, manhat_check_22_4, manhat_check_24_4, count_21_22_24_4)
+                            manhat_check_21_4, manhat_check_22_4, manhat_check_24_4 = Parallel123(manhat_check_21_4, manhat_check_22_4, manhat_check_24_4, count_21_22_24_4)
                             count_21_22_24_4 += 1
                         elif manhat_check_21_4_22_23_24 == manhat_check_22_4 and manhat_check_21_4_22_23_24== manhat_check_23_4 and manhat_check_21_4_22_23_24== manhat_check_24_4:
-                            manhat_check_22_4, manhat_check_23_4, manhat_check_24_4 = Pararell123(manhat_check_22_4, manhat_check_23_4, manhat_check_24_4, count_22_23_24_4)
+                            manhat_check_22_4, manhat_check_23_4, manhat_check_24_4 = Parallel123(manhat_check_22_4, manhat_check_23_4, manhat_check_24_4, count_22_23_24_4)
                             count_22_23_24_4 += 1
                         elif manhat_check_21_4_22_23_24 == manhat_check_21_4 and manhat_check_21_4_22_23_24 == manhat_check_22_4 and manhat_check_21_4_22_23_24 == manhat_check_23_4 and manhat_check_21_4_22_23_24 == manhat_check_24_4:
-                            manhat_check_21_4, manhat_check_22_4, manhat_check_23_4, manhat_check_24_4 = Pararell1234(manhat_check_21_4, manhat_check_22_4, manhat_check_23_4, manhat_check_24_4, count_21_22_23_24_4)
+                            manhat_check_21_4, manhat_check_22_4, manhat_check_23_4, manhat_check_24_4 = Parallel1234(manhat_check_21_4, manhat_check_22_4, manhat_check_23_4, manhat_check_24_4, count_21_22_23_24_4)
                             count_21_22_23_24_4 += 1
                         manhat_check_21_4_22_23_24 = min(manhat_check_21_4, manhat_check_22_4, manhat_check_23_4, manhat_check_24_4)
                         if manhat_check_21_4_22_23_24 == manhat_check_21_4:
