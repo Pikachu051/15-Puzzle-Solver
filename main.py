@@ -1,7 +1,6 @@
-import webbrowser
 import numpy as np
+
 def MAIN_FUNCTION(puzzle):
-    """INPUT"""
     """POSITION"""
     for x in range(0, 4):
         for y in range(0, 4):
@@ -68,8 +67,6 @@ def MAIN_FUNCTION(puzzle):
     man_15 = abs(posi_15_row-3)+abs(posi_15_colum-2)
     total_man = man_1+man_2+man_3+man_4+man_5+man_6+man_7+man_8+man_9+man_10+man_11+man_12+man_13+man_14+man_15
     return total_man
-MAIN_FUNCTION(np.array([[int(input()) for _ in range(4)], [int(input()) for _ in range(4)], \
-    [int(input()) for _ in range(4)], [int(input()) for _ in range(4)]]))
 
 def Pararell12(check1, check2, count):
     """Pararell"""
@@ -79,6 +76,7 @@ def Pararell12(check1, check2, count):
     elif count % 2 == 1:
         check2 -= 1
         return check1, check2
+
 def Pararell123(check1, check2, check3, count):
     """Pararell"""
     if count % 3 == 0:
@@ -93,6 +91,7 @@ def Pararell123(check1, check2, check3, count):
         num_1 += 1
         check3 -= 1
         return check1, check2, check3
+
 def Pararell123(check1, check2, check3, check4, count):
     """Pararell"""
     if count % 4 == 0:
@@ -107,61 +106,15 @@ def Pararell123(check1, check2, check3, check4, count):
     elif count % 4 == 3:
         check4 -= 1
         return check1, check2, check3, check4
+
 def main():
+    """mainfunction"""
     sample_puzzle = np.array([[1, 2, 3, 4] , [5, 6 , 7, 8], [9, 10, 11, 12], [13, 14, 15, 0]])
     sample_puzzle = np.reshape(sample_puzzle,(4,4))
     puzzle_new = np.array([[int(input()) for _ in range(4)], [int(input()) for _ in range(4)], [int(input()) for _ in range(4)], [int(input()) for _ in range(4)]])
     print(puzzle_new)
     manhat = MAIN_FUNCTION(puzzle_new)
     print(manhat)
-    check_1 = []
-    check_2 = []
-    check_3 = []
-    check_4 = []
-    check_5 = []
-    check_6 = []
-    check_7 = []
-    check_8 = []
-    check_9 = []
-    check_10 = []
-    check_11 = []
-    check_12 = []
-    check_13 = []
-    check_14 = []
-    check_15 = []
-    check_16 = []
-    check_17 = []
-    check_18 = []
-    check_19 = []
-    check_20 = []
-    check_21 = []
-    check_22 = []
-    check_23 = []
-    check_24 = []
-    check_9_2 = []
-    check_10_2 = []
-    check_11_2 = []
-    check_12_2 = []
-    check_13_2 = []
-    check_14_2 = []
-    check_15_2 = []
-    check_16_2 = []
-    check_17_2 = []
-    check_18_2 = []
-    check_19_2= []
-    check_20_2 = []
-    check_21_2 = []
-    check_22_2 = []
-    check_23_2 = []
-    check_24_2 = []
-    check_21_3 = []
-    check_22_3 = []
-    check_23_3 = []
-    check_24_3 = []
-    check_21_4 = []
-    check_22_4 = []
-    check_23_4 = []
-    check_24_4 = []
     count_1_2 = 0
     count_3_4 = 0
     count_5_6 = 0
@@ -723,6 +676,19 @@ def main():
                         check_20[x][y-1] = 0
                         manhat_check_20 = MAIN_FUNCTION(check_20)
                         manhat_check_18_19_20 = min(manhat_check_18, manhat_check_19, manhat_check_20)
+                        if manhat_check_18_19_20 == manhat_check_18 and manhat_check_18_19_20== manhat_check_19:
+                            manhat_check_18, manhat_check_19 = Pararell12(manhat_check_18, manhat_check_19, count_18_19)
+                            count_18_19 += 1
+                        elif manhat_check_18_19_20 == manhat_check_19 and manhat_check_18_19_20 == manhat_check_20:
+                            manhat_check_19, manhat_check_20 = Pararell12(manhat_check_19, manhat_check_20, count_19_20)
+                            count_19_20 += 1
+                        elif manhat_check_18_19_20 == manhat_check_18 and manhat_check_18_19_20 == manhat_check_20:
+                            manhat_check_18, manhat_check_20 = Pararell12(manhat_check_18, manhat_check_20, count_18_20)
+                            count_18_20 += 1
+                        elif manhat_check_18_19_20 == manhat_check_18 and manhat_check_18_19_20 == manhat_check_19 and manhat_check_18_19_20  == manhat_check_20:
+                            manhat_check_18, manhat_check_19, manhat_check_20 = Pararell123(manhat_check_18, manhat_check_19, manhat_check_20, count_18_19_20)
+                            count_18_19_20 += 1
+                        manhat_check_18_19_20 = min(manhat_check_18, manhat_check_19, manhat_check_20)
                         if manhat_check_18_19_20 == manhat_check_18:
                             puzzle_new = check_18
                             print(puzzle_new)
@@ -764,6 +730,19 @@ def main():
                         check_20_2[x][y-1] = 0
                         manhat_check_20_2 = MAIN_FUNCTION(check_20_2)
                         manhat_check_18_2_19_20 = min(manhat_check_18_2, manhat_check_19_2, manhat_check_20_2)
+                        if manhat_check_18_2_19_20 == manhat_check_18_2 and manhat_check_18_2_19_20== manhat_check_19_2:
+                            manhat_check_18_2, manhat_check_19_2 = Pararell12(manhat_check_18_2, manhat_check_19_2, count_18_19_2)
+                            count_18_19_2 += 1
+                        elif manhat_check_18_2_19_20 == manhat_check_19_2 and manhat_check_18_2_19_20 == manhat_check_20_2:
+                            manhat_check_19_2, manhat_check_20_2 = Pararell12(manhat_check_19_2, manhat_check_20_2, count_19_20_2)
+                            count_19_20_2 += 1
+                        elif manhat_check_18_2_19_20 == manhat_check_18_2 and manhat_check_18_2_19_20 == manhat_check_20_2:
+                            manhat_check_18_2, manhat_check_20_2 = Pararell12(manhat_check_18_2, manhat_check_20_2, count_18_20_2)
+                            count_18_20_2 += 1
+                        elif manhat_check_18_2_19_20 == manhat_check_18_2 and manhat_check_18_2_19_20 == manhat_check_19_2 and manhat_check_18_2_19_20  == manhat_check_20_2:
+                            manhat_check_18_2, manhat_check_19_2, manhat_check_20_2 = Pararell123(manhat_check_18_2, manhat_check_19_2, manhat_check_20_2, count_18_19_20_2)
+                            count_18_19_20_2 += 1
+                        manhat_check_18_2_19_20 = min(manhat_check_18_2, manhat_check_19_2, manhat_check_20_2)
                         if manhat_check_18_2_19_20 == manhat_check_18_2:
                             puzzle_new = check_18_2
                             print(puzzle_new)
@@ -773,6 +752,13 @@ def main():
                                 break
                         elif manhat_check_18_2_19_20 == manhat_check_19_2:
                             puzzle_new = check_19_2
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                        elif manhat_check_18_2_19_20 == manhat_check_20_2:
+                            puzzle_new = check_20_2
                             print(puzzle_new)
                             manhat = MAIN_FUNCTION(puzzle_new)
                             print(manhat)
@@ -803,6 +789,40 @@ def main():
                         check_24[x][y] = check_24[x][y+1]
                         check_24[x][y+1] = 0
                         manhat_check_24 = MAIN_FUNCTION(check_24)
+                        manhat_check_21_22_23_24 = min(manhat_check_21, manhat_check_22, manhat_check_23, manhat_check_24)
+                        if manhat_check_21_22_23_24 == manhat_check_21 and manhat_check_21_22_23_24 == manhat_check_22:
+                            manhat_check_21, manhat_check_22 = Pararell12(manhat_check_21, manhat_check_22, count_21_22)
+                            count_21_22 += 1
+                        elif manhat_check_21_22_23_24 == manhat_check_21 and manhat_check_21_22_23_24 == manhat_check_23:
+                            manhat_check_21, manhat_check_23 = Pararell12(manhat_check_21, manhat_check_23, count_21_23)
+                            count_21_23 += 1
+                        elif manhat_check_21_22_23_24 == manhat_check_21 and manhat_check_21_22_23_24 == manhat_check_24:
+                            manhat_check_21, manhat_check_24 = Pararell12(manhat_check_21, manhat_check_24, count_21_24)
+                            count_21_24 += 1
+                        elif manhat_check_21_22_23_24 == manhat_check_22 and manhat_check_21_22_23_24 == manhat_check_23:
+                            manhat_check_22, manhat_check_23 = Pararell12(manhat_check_22, manhat_check_23, count_22_23)
+                            count_22_23 += 1
+                        elif manhat_check_21_22_23_24 == manhat_check_22 and manhat_check_21_22_23_24 == manhat_check_24:
+                            manhat_check_22, manhat_check_24 = Pararell12(manhat_check_22, manhat_check_24, count_22_24)
+                            count_22_24 += 1
+                        elif manhat_check_21_22_23_24 == manhat_check_23 and manhat_check_21_22_23_24 == manhat_check_24:
+                            manhat_check_23, manhat_check_24 = Pararell12(manhat_check_23, manhat_check_24, count_23_24)
+                            count_23_24 += 1
+                        elif manhat_check_21_22_23_24 == manhat_check_21 and manhat_check_21_22_23_24 == manhat_check_22 and manhat_check_21_22_23_24 == manhat_check_23:
+                            manhat_check_21, manhat_check_22, manhat_check_23 = Pararell123(manhat_check_21, manhat_check_22, manhat_check_23, count_21_22_23)
+                            count_21_22_23 += 1
+                        elif manhat_check_21_22_23_24 == manhat_check_21 and manhat_check_21_22_23_24 == manhat_check_23 and manhat_check_21_22_23_24 == manhat_check_24:
+                            manhat_check_21, manhat_check_23, manhat_check_24 = Pararell123(manhat_check_21, manhat_check_23, manhat_check_24, count_21_23_24)
+                            count_21_23_24 += 1
+                        elif manhat_check_21_22_23_24 == manhat_check_21 and manhat_check_21_22_23_24 == manhat_check_22 and manhat_check_21_22_23_24 == manhat_check_24:
+                            manhat_check_21, manhat_check_22, manhat_check_24 = Pararell123(manhat_check_21, manhat_check_22, manhat_check_24, count_21_22_24)
+                            count_21_22_24 += 1
+                        elif manhat_check_21_22_23_24 == manhat_check_22 and manhat_check_21_22_23_24== manhat_check_23 and manhat_check_21_22_23_24== manhat_check_24:
+                            manhat_check_22, manhat_check_23, manhat_check_24 = Pararell123(manhat_check_22, manhat_check_23, manhat_check_24, count_22_23_24)
+                            count_22_23_24 += 1
+                        elif manhat_check_21_22_23_24 == manhat_check_21 and manhat_check_21_22_23_24 == manhat_check_22 and manhat_check_21_22_23_24 == manhat_check_23 and manhat_check_21_22_23_24 == manhat_check_24:
+                            manhat_check_21, manhat_check_22, manhat_check_23, manhat_check_24 = Pararell1234(manhat_check_21, manhat_check_22, manhat_check_23, manhat_check_24, count_21_22_23_24)
+                            count_21_22_23_24 += 1
                         manhat_check_21_22_23_24 = min(manhat_check_21, manhat_check_22, manhat_check_23, manhat_check_24)
                         if manhat_check_21_22_23_24 == manhat_check_21:
                             puzzle_new = check_21
@@ -858,6 +878,40 @@ def main():
                         check_24_2[x][y+1] = 0
                         manhat_check_24_2 = MAIN_FUNCTION(check_24_2)
                         manhat_check_21_2_22_23_24 = min(manhat_check_21_2, manhat_check_22_2, manhat_check_23_2, manhat_check_24_2)
+                        if manhat_check_21_2_22_23_24 == manhat_check_21_2 and manhat_check_21_2_22_23_24 == manhat_check_22_2:
+                            manhat_check_21_2, manhat_check_22_2 = Pararell12(manhat_check_21_2, manhat_check_22_2, count_21_22_2)
+                            count_21_22_2 += 1
+                        elif manhat_check_21_2_22_23_24 == manhat_check_21_2 and manhat_check_21_2_22_23_24 == manhat_check_23_2:
+                            manhat_check_21_2, manhat_check_23_2 = Pararell12(manhat_check_21_2, manhat_check_23_2, count_21_23_2)
+                            count_21_23_2 += 1
+                        elif manhat_check_21_2_22_23_24 == manhat_check_21_2 and manhat_check_21_2_22_23_24 == manhat_check_24_2:
+                            manhat_check_21_2, manhat_check_24_2 = Pararell12(manhat_check_21_2, manhat_check_24_2, count_21_24_2)
+                            count_21_24_2 += 1
+                        elif manhat_check_21_2_22_23_24 == manhat_check_22_2 and manhat_check_21_2_22_23_24 == manhat_check_23_2:
+                            manhat_check_22_2, manhat_check_23_2 = Pararell12(manhat_check_22_2, manhat_check_23_2, count_22_23_2)
+                            count_22_23_2 += 1
+                        elif manhat_check_21_2_22_23_24 == manhat_check_22_2 and manhat_check_21_2_22_23_24 == manhat_check_24_2:
+                            manhat_check_22_2, manhat_check_24_2 = Pararell12(manhat_check_22_2, manhat_check_24_2, count_22_24_2)
+                            count_22_24_2 += 1
+                        elif manhat_check_21_2_22_23_24 == manhat_check_23_2 and manhat_check_21_2_22_23_24 == manhat_check_24_2:
+                            manhat_check_23_2, manhat_check_24_2 = Pararell12(manhat_check_23_2, manhat_check_24_2, count_23_24_2)
+                            count_23_24_2 += 1
+                        elif manhat_check_21_2_22_23_24 == manhat_check_21_2 and manhat_check_21_2_22_23_24 == manhat_check_22_2 and manhat_check_21_2_22_23_24 == manhat_check_23_2:
+                            manhat_check_21_2, manhat_check_22_2, manhat_check_23_2 = Pararell123(manhat_check_21_2, manhat_check_22_2, manhat_check_23_2, count_21_22_23_2)
+                            count_21_22_23_2 += 1
+                        elif manhat_check_21_2_22_23_24 == manhat_check_21_2 and manhat_check_21_2_22_23_24 == manhat_check_23_2 and manhat_check_21_2_22_23_24 == manhat_check_24_2:
+                            manhat_check_21_2, manhat_check_23_2, manhat_check_24_2 = Pararell123(manhat_check_21_2, manhat_check_23_2, manhat_check_24_2, count_21_23_24_2)
+                            count_21_23_24_2 += 1
+                        elif manhat_check_21_2_22_23_24 == manhat_check_21_2 and manhat_check_21_2_22_23_24 == manhat_check_22_2 and manhat_check_21_2_22_23_24 == manhat_check_24_2:
+                            manhat_check_21_2, manhat_check_22_2, manhat_check_24_2 = Pararell123(manhat_check_21_2, manhat_check_22_2, manhat_check_24_2, count_21_22_24_2)
+                            count_21_22_24_2 += 1
+                        elif manhat_check_21_2_22_23_24 == manhat_check_22_2 and manhat_check_21_2_22_23_24== manhat_check_23_2 and manhat_check_21_2_22_23_24== manhat_check_24_2:
+                            manhat_check_22_2, manhat_check_23_2, manhat_check_24_2 = Pararell123(manhat_check_22_2, manhat_check_23_2, manhat_check_24_2, count_22_23_24_2)
+                            count_22_23_24_2 += 1
+                        elif manhat_check_21_2_22_23_24 == manhat_check_21_2 and manhat_check_21_2_22_23_24 == manhat_check_22_2 and manhat_check_21_2_22_23_24 == manhat_check_23_2 and manhat_check_21_2_22_23_24 == manhat_check_24_2:
+                            manhat_check_21_2, manhat_check_22_2, manhat_check_23_2, manhat_check_24_2 = Pararell1234(manhat_check_21_2, manhat_check_22_2, manhat_check_23_2, manhat_check_24_2, count_21_22_23_24_2)
+                            count_21_22_23_24_2 += 1
+                        manhat_check_21_2_22_23_24 = min(manhat_check_21_2, manhat_check_22_2, manhat_check_23_2, manhat_check_24_2)
                         if manhat_check_21_2_22_23_24 == manhat_check_21_2:
                             puzzle_new = check_21_2
                             print(puzzle_new)
@@ -911,6 +965,40 @@ def main():
                         check_24_3[x][y] = check_24_3[x][y+1]
                         check_24_3[x][y+1] = 0
                         manhat_check_24_3 = MAIN_FUNCTION(check_24_3)
+                        manhat_check_21_3_22_23_24 = min(manhat_check_21_3, manhat_check_22_3, manhat_check_23_3, manhat_check_24_3)
+                        if manhat_check_21_3_22_23_24 == manhat_check_21_3 and manhat_check_21_3_22_23_24 == manhat_check_22_3:
+                            manhat_check_21_3, manhat_check_22_3 = Pararell12(manhat_check_21_3, manhat_check_22_3, count_21_22_3)
+                            count_21_22_3 += 1
+                        elif manhat_check_21_3_22_23_24 == manhat_check_21_3 and manhat_check_21_3_22_23_24 == manhat_check_23_3:
+                            manhat_check_21_3, manhat_check_23_3 = Pararell12(manhat_check_21_3, manhat_check_23_3, count_21_23_3)
+                            count_21_23_3 += 1
+                        elif manhat_check_21_3_22_23_24 == manhat_check_21_3 and manhat_check_21_3_22_23_24 == manhat_check_24_3:
+                            manhat_check_21_3, manhat_check_24_3 = Pararell12(manhat_check_21_3, manhat_check_24_3, count_21_24_3)
+                            count_21_24_3 += 1
+                        elif manhat_check_21_3_22_23_24 == manhat_check_22_3 and manhat_check_21_3_22_23_24 == manhat_check_23_3:
+                            manhat_check_22_3, manhat_check_23_3 = Pararell12(manhat_check_22_3, manhat_check_23_3, count_22_23_3)
+                            count_22_23_3 += 1
+                        elif manhat_check_21_3_22_23_24 == manhat_check_22_3 and manhat_check_21_3_22_23_24 == manhat_check_24_3:
+                            manhat_check_22_3, manhat_check_24_3 = Pararell12(manhat_check_22_3, manhat_check_24_3, count_22_24_3)
+                            count_22_24_3 += 1
+                        elif manhat_check_21_3_22_23_24 == manhat_check_23_3 and manhat_check_21_3_22_23_24 == manhat_check_24_3:
+                            manhat_check_23_3, manhat_check_24_3 = Pararell12(manhat_check_23_3, manhat_check_24_3, count_23_24_3)
+                            count_23_24_3 += 1
+                        elif manhat_check_21_3_22_23_24 == manhat_check_21_3 and manhat_check_21_3_22_23_24 == manhat_check_22_3 and manhat_check_21_3_22_23_24 == manhat_check_23_3:
+                            manhat_check_21_3, manhat_check_22_3, manhat_check_23_3 = Pararell123(manhat_check_21_3, manhat_check_22_3, manhat_check_23_3, count_21_22_23_3)
+                            count_21_22_23_3 += 1
+                        elif manhat_check_21_3_22_23_24 == manhat_check_21_3 and manhat_check_21_3_22_23_24 == manhat_check_23_3 and manhat_check_21_3_22_23_24 == manhat_check_24_3:
+                            manhat_check_21_3, manhat_check_23_3, manhat_check_24_3 = Pararell123(manhat_check_21_3, manhat_check_23_3, manhat_check_24_3, count_21_23_24_3)
+                            count_21_23_24_3 += 1
+                        elif manhat_check_21_3_22_23_24 == manhat_check_21_3 and manhat_check_21_3_22_23_24 == manhat_check_22_3 and manhat_check_21_3_22_23_24 == manhat_check_24_3:
+                            manhat_check_21_3, manhat_check_22_3, manhat_check_24_3 = Pararell123(manhat_check_21_3, manhat_check_22_3, manhat_check_24_3, count_21_22_24_3)
+                            count_21_22_24_3 += 1
+                        elif manhat_check_21_3_22_23_24 == manhat_check_22_3 and manhat_check_21_3_22_23_24== manhat_check_23_3 and manhat_check_21_3_22_23_24== manhat_check_24_3:
+                            manhat_check_22_3, manhat_check_23_3, manhat_check_24_3 = Pararell123(manhat_check_22_3, manhat_check_23_3, manhat_check_24_3, count_22_23_24_3)
+                            count_22_23_24_3 += 1
+                        elif manhat_check_21_3_22_23_24 == manhat_check_21_3 and manhat_check_21_3_22_23_24 == manhat_check_22_3 and manhat_check_21_3_22_23_24 == manhat_check_23_3 and manhat_check_21_3_22_23_24 == manhat_check_24_3:
+                            manhat_check_21_3, manhat_check_22_3, manhat_check_23_3, manhat_check_24_3 = Pararell1234(manhat_check_21_3, manhat_check_22_3, manhat_check_23_3, manhat_check_24_3, count_21_22_23_24_3)
+                            count_21_22_23_24_3 += 1
                         manhat_check_21_3_22_23_24 = min(manhat_check_21_3, manhat_check_22_3, manhat_check_23_3, manhat_check_24_3)
                         if manhat_check_21_3_22_23_24 == manhat_check_21_3:
                             puzzle_new = check_21_3
@@ -966,6 +1054,40 @@ def main():
                         check_24_4[x][y+1] = 0
                         manhat_check_24_4 = MAIN_FUNCTION(check_24_4)
                         manhat_check_21_4_22_23_24 = min(manhat_check_21_4, manhat_check_22_4, manhat_check_23_4, manhat_check_24_4)
+                        if manhat_check_21_4_22_23_24 == manhat_check_21_4 and manhat_check_21_4_22_23_24 == manhat_check_22_4:
+                            manhat_check_21_4, manhat_check_22_4 = Pararell12(manhat_check_21_4, manhat_check_22_4, count_21_22_4)
+                            count_21_22_4 += 1
+                        elif manhat_check_21_4_22_23_24 == manhat_check_21_4 and manhat_check_21_4_22_23_24 == manhat_check_23_4:
+                            manhat_check_21_4, manhat_check_23_4 = Pararell12(manhat_check_21_4, manhat_check_23_4, count_21_23_4)
+                            count_21_23_4 += 1
+                        elif manhat_check_21_4_22_23_24 == manhat_check_21_4 and manhat_check_21_4_22_23_24 == manhat_check_24_4:
+                            manhat_check_21_4, manhat_check_24_4 = Pararell12(manhat_check_21_4, manhat_check_24_4, count_21_24_4)
+                            count_21_24_4 += 1
+                        elif manhat_check_21_4_22_23_24 == manhat_check_22_4 and manhat_check_21_4_22_23_24 == manhat_check_23_4:
+                            manhat_check_22_4, manhat_check_23_4 = Pararell12(manhat_check_22_4, manhat_check_23_4, count_22_23_4)
+                            count_22_23_4 += 1
+                        elif manhat_check_21_4_22_23_24 == manhat_check_22_4 and manhat_check_21_4_22_23_24 == manhat_check_24_4:
+                            manhat_check_22_4, manhat_check_24_4 = Pararell12(manhat_check_22_4, manhat_check_24_4, count_22_24_4)
+                            count_22_24_4 += 1
+                        elif manhat_check_21_4_22_23_24 == manhat_check_23_4 and manhat_check_21_4_22_23_24 == manhat_check_24_4:
+                            manhat_check_23_4, manhat_check_24_4 = Pararell12(manhat_check_23_4, manhat_check_24_4, count_23_24_4)
+                            count_23_24_4 += 1
+                        elif manhat_check_21_4_22_23_24 == manhat_check_21_4 and manhat_check_21_4_22_23_24 == manhat_check_22_4 and manhat_check_21_4_22_23_24 == manhat_check_23_4:
+                            manhat_check_21_4, manhat_check_22_4, manhat_check_23_4 = Pararell123(manhat_check_21_4, manhat_check_22_4, manhat_check_23_4, count_21_22_23_4)
+                            count_21_22_23_4 += 1
+                        elif manhat_check_21_4_22_23_24 == manhat_check_21_4 and manhat_check_21_4_22_23_24 == manhat_check_23_4 and manhat_check_21_4_22_23_24 == manhat_check_24_4:
+                            manhat_check_21_4, manhat_check_23_4, manhat_check_24_4 = Pararell123(manhat_check_21_4, manhat_check_23_4, manhat_check_24_4, count_21_23_24_4)
+                            count_21_23_24_4 += 1
+                        elif manhat_check_21_4_22_23_24 == manhat_check_21_4 and manhat_check_21_4_22_23_24 == manhat_check_22_4 and manhat_check_21_4_22_23_24 == manhat_check_24_4:
+                            manhat_check_21_4, manhat_check_22_4, manhat_check_24_4 = Pararell123(manhat_check_21_4, manhat_check_22_4, manhat_check_24_4, count_21_22_24_4)
+                            count_21_22_24_4 += 1
+                        elif manhat_check_21_4_22_23_24 == manhat_check_22_4 and manhat_check_21_4_22_23_24== manhat_check_23_4 and manhat_check_21_4_22_23_24== manhat_check_24_4:
+                            manhat_check_22_4, manhat_check_23_4, manhat_check_24_4 = Pararell123(manhat_check_22_4, manhat_check_23_4, manhat_check_24_4, count_22_23_24_4)
+                            count_22_23_24_4 += 1
+                        elif manhat_check_21_4_22_23_24 == manhat_check_21_4 and manhat_check_21_4_22_23_24 == manhat_check_22_4 and manhat_check_21_4_22_23_24 == manhat_check_23_4 and manhat_check_21_4_22_23_24 == manhat_check_24_4:
+                            manhat_check_21_4, manhat_check_22_4, manhat_check_23_4, manhat_check_24_4 = Pararell1234(manhat_check_21_4, manhat_check_22_4, manhat_check_23_4, manhat_check_24_4, count_21_22_23_24_4)
+                            count_21_22_23_24_4 += 1
+                        manhat_check_21_4_22_23_24 = min(manhat_check_21_4, manhat_check_22_4, manhat_check_23_4, manhat_check_24_4)
                         if manhat_check_21_4_22_23_24 == manhat_check_21_4:
                             puzzle_new = check_21_4
                             print(puzzle_new)
@@ -999,4 +1121,3 @@ def main():
     else:
         print("Error: Can't find the valid solution. The problem is too complicated for this program.")
 main()
-
