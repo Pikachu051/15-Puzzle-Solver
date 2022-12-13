@@ -1,6 +1,5 @@
 import webbrowser
 import numpy as np
-
 def MAIN_FUNCTION(puzzle):
     """INPUT"""
     """POSITION"""
@@ -1000,3 +999,4 @@ def main():
     else:
         print("Error: Can't find the valid solution. The problem is too complicated for this program.")
 main()
+
