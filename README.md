@@ -16,5 +16,6 @@
 
     **The empty space is the zero (0)
 
- 2. Press 'Solve' button.
- 3. Done!
+ 2. Wait for the results.
+ 
+ 3. Done
