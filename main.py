@@ -140,6 +140,30 @@ def main():
     check_22 = []
     check_23 = []
     check_24 = []
+    check_9_2 = []
+    check_10_2 = []
+    check_11_2 = []
+    check_12_2 = []
+    check_13_2 = []
+    check_14_2 = []
+    check_15_2 = []
+    check_16_2 = []
+    check_17_2 = []
+    check_18_2 = []
+    check_19_2= []
+    check_20_2 = []
+    check_21_2 = []
+    check_22_2 = []
+    check_23_2 = []
+    check_24_2 = []
+    check_21_3 = []
+    check_22_3 = []
+    check_23_3 = []
+    check_24_3 = []
+    check_21_4 = []
+    check_22_4 = []
+    check_23_4 = []
+    check_24_4 = []
     for _ in range(0, 999):
         manhat = MAIN_FUNCTION(puzzle_new)
         if manhat == 0:
@@ -260,7 +284,7 @@ def main():
                             print(manhat)
                             if manhat == 0:
                                 break
-                    elif puzzle_new[x][y] == 0 and x == 0 and 1 <= y <= 2:
+                    elif puzzle_new[x][y] == 0 and x == 0 and y == 1:
                         check_9 = np.array([])
                         check_9 = np.append(check_9, puzzle_new)
                         check_9 = np.reshape(check_9,(4,4))
@@ -301,7 +325,48 @@ def main():
                             print(manhat)
                             if manhat == 0:
                                 break
-                    elif puzzle_new[x][y] == 0 and x == 3 and 1 <= y <= 2:
+                    elif puzzle_new[x][y] == 0 and x == 0 and y == 2:
+                        check_9_2 = np.array([])
+                        check_9_2 = np.append(check_9_2, puzzle_new)
+                        check_9_2 = np.reshape(check_9_2,(4,4))
+                        check_9_2[x][y] = check_9_2[x+1][y]
+                        check_9_2[x+1][y] = 0
+                        manhat_check_9_2 = MAIN_FUNCTION(check_9_2)
+                        check_10_2 = np.array([])
+                        check_10_2 = np.append(check_10_2, puzzle_new)
+                        check_10_2 = np.reshape(check_10_2,(4,4))
+                        check_10_2[x][y] = check_10_2[x][y-1]
+                        check_10_2[x][y-1] = 0
+                        manhat_check_10_2 = MAIN_FUNCTION(check_10_2)
+                        check_11_2 = np.array([])
+                        check_11_2 = np.append(check_11_2, puzzle_new)
+                        check_11_2 = np.reshape(check_11_2,(4,4))
+                        check_11_2[x][y] = check_11_2[x][y+1]
+                        check_11_2[x][y+1] = 0
+                        manhat_check_11_2 = MAIN_FUNCTION(check_11_2)
+                        manhat_check_9_2_10_11 = min(manhat_check_9_2, manhat_check_10_2, manhat_check_11_2)
+                        if manhat_check_9_2_10_11 == manhat_check_9_2:
+                            puzzle_new = check_9_2
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                        elif manhat_check_9_2_10_11 == manhat_check_10_2:
+                            puzzle_new = check_10_2
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                        elif manhat_check_9_2_10_11 == manhat_check_11_2:
+                            puzzle_new = check_11_2
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                    elif puzzle_new[x][y] == 0 and x == 3 and y == 1:
                         check_12 = np.array([])
                         check_12 = np.append(check_12, puzzle_new)
                         check_12 = np.reshape(check_12,(4,4))
@@ -342,7 +407,48 @@ def main():
                             print(manhat)
                             if manhat == 0:
                                 break
-                    elif puzzle_new[x][y] == 0 and 1 <= x <= 2 and y == 0:
+                    elif puzzle_new[x][y] == 0 and x == 3 and y == 2:
+                        check_12_2 = np.array([])
+                        check_12_2 = np.append(check_12_2, puzzle_new)
+                        check_12_2 = np.reshape(check_12_2,(4,4))
+                        check_12_2[x][y] = check_12_2[x-1][y]
+                        check_12_2[x-1][y] = 0
+                        manhat_check_12_2 = MAIN_FUNCTION(check_12_2)
+                        check_13_2 = np.array([])
+                        check_13_2 = np.append(check_13_2, puzzle_new)
+                        check_13_2 = np.reshape(check_13_2,(4,4))
+                        check_13_2[x][y] = check_13_2[x][y-1]
+                        check_13_2[x][y-1] = 0
+                        manhat_check_13_2 = MAIN_FUNCTION(check_13_2)
+                        check_14_2 = np.array([])
+                        check_14_2 = np.append(check_14_2, puzzle_new)
+                        check_14_2 = np.reshape(check_14_2,(4,4))
+                        check_14_2[x][y] = check_14_2[x][y+1]
+                        check_14_2[x][y+1] = 0
+                        manhat_check_14_2 = MAIN_FUNCTION(check_14_2)
+                        manhat_check_12_2_13_14 = min(manhat_check_12_2, manhat_check_13_2, manhat_check_14_2)
+                        if manhat_check_12_2_13_14 == manhat_check_12_2:
+                            puzzle_new = check_12_2
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                        elif manhat_check_12_2_13_14 == manhat_check_13_2:
+                            puzzle_new = check_13_2
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                        elif manhat_check_12_2_13_14 == manhat_check_14_2:
+                            puzzle_new = check_14_2
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                    elif puzzle_new[x][y] == 0 and x == 1 and y == 0:
                         check_15 = np.array([])
                         check_15 = np.append(check_15, puzzle_new)
                         check_15 = np.reshape(check_15,(4,4))
@@ -383,7 +489,48 @@ def main():
                             print(manhat)
                             if manhat == 0:
                                 break
-                    elif puzzle_new[x][y] == 0 and 1 <= x <= 2 and y == 3:
+                    elif puzzle_new[x][y] == 0 and x == 2 and y == 0:
+                        check_15_2 = np.array([])
+                        check_15_2 = np.append(check_15_2, puzzle_new)
+                        check_15_2 = np.reshape(check_15_2,(4,4))
+                        check_15_2[x][y] = check_15_2[x+1][y]
+                        check_15_2[x+1][y] = 0
+                        manhat_check_15_2 = MAIN_FUNCTION(check_15_2)
+                        check_16_2 = np.array([])
+                        check_16_2 = np.append(check_16_2, puzzle_new)
+                        check_16_2 = np.reshape(check_16_2,(4,4))
+                        check_16_2[x][y] = check_16_2[x-1][y]
+                        check_16_2[x-1][y] = 0
+                        manhat_check_16_2 = MAIN_FUNCTION(check_16_2)
+                        check_17_2 = np.array([])
+                        check_17_2 = np.append(check_17_2, puzzle_new)
+                        check_17_2 = np.reshape(check_17_2,(4,4))
+                        check_17_2[x][y] = check_17_2[x][y+1]
+                        check_17_2[x][y+1] = 0
+                        manhat_check_17_2 = MAIN_FUNCTION(check_17_2)
+                        manhat_check_15_2_16_17 = min(manhat_check_15_2, manhat_check_16_2, manhat_check_17_2)
+                        if manhat_check_15_2_16_17 == manhat_check_15_2:
+                            puzzle_new = check_15_2
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                        elif manhat_check_15_2_16_17 == manhat_check_16_2:
+                            puzzle_new = check_16_2
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                        elif manhat_check_15_2_16_17 == manhat_check_17_2:
+                            puzzle_new = check_17_2
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                    elif puzzle_new[x][y] == 0 and x == 1 and y == 3:
                         check_18 = np.array([])
                         check_18 = np.append(check_18, puzzle_new)
                         check_18 = np.reshape(check_18,(4,4))
@@ -424,7 +571,41 @@ def main():
                             print(manhat)
                             if manhat == 0:
                                 break
-                    elif puzzle_new[x][y] == 0 and 1 <= x <= 2 and 1 <= y <= 2:
+                    elif puzzle_new[x][y] == 0 and x == 2 and y == 3:
+                        check_18_2 = np.array([])
+                        check_18_2 = np.append(check_18_2, puzzle_new)
+                        check_18_2 = np.reshape(check_18_2,(4,4))
+                        check_18_2[x][y] = check_18_2[x+1][y]
+                        check_18_2[x+1][y] = 0
+                        manhat_check_18_2 = MAIN_FUNCTION(check_18_2)
+                        check_19_2 = np.array([])
+                        check_19_2 = np.append(check_19_2, puzzle_new)
+                        check_19_2 = np.reshape(check_19_2,(4,4))
+                        check_19_2[x][y] = check_19_2[x-1][y]
+                        check_19_2[x-1][y] = 0
+                        manhat_check_19_2 = MAIN_FUNCTION(check_19_2)
+                        check_20_2 = np.array([])
+                        check_20_2 = np.append(check_20_2, puzzle_new)
+                        check_20_2 = np.reshape(check_20_2,(4,4))
+                        check_20_2[x][y] = check_20_2[x][y-1]
+                        check_20_2[x][y-1] = 0
+                        manhat_check_20_2 = MAIN_FUNCTION(check_20_2)
+                        manhat_check_18_2_19_20 = min(manhat_check_18_2, manhat_check_19_2, manhat_check_20_2)
+                        if manhat_check_18_2_19_20 == manhat_check_18_2:
+                            puzzle_new = check_18_2
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                        elif manhat_check_18_2_19_20 == manhat_check_19_2:
+                            puzzle_new = check_19_2
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                    elif puzzle_new[x][y] == 0 and x == 1 and y == 1:
                         check_21 = np.array([])
                         check_21 = np.append(check_21, puzzle_new)
                         check_21 = np.reshape(check_21,(4,4))
@@ -473,6 +654,168 @@ def main():
                             print(manhat)
                         elif manhat_check_21_22_23_24 == manhat_check_24:
                             puzzle_new = check_24
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                    elif puzzle_new[x][y] == 0 and x == 1 and y == 2:
+                        check_21_2 = np.array([])
+                        check_21_2 = np.append(check_21_2, puzzle_new)
+                        check_21_2 = np.reshape(check_21_2,(4,4))
+                        check_21_2[x][y] = check_21_2[x-1][y]
+                        check_21_2[x-1][y] = 0
+                        manhat_check_21_2 = MAIN_FUNCTION(check_21_2)
+                        check_22_2 = np.array([])
+                        check_22_2 = np.append(check_22_2, puzzle_new)
+                        check_22_2 = np.reshape(check_22_2,(4,4))
+                        check_22_2[x][y] = check_22_2[x+1][y]
+                        check_22_2[x+1][y] = 0
+                        manhat_check_22_2 = MAIN_FUNCTION(check_22_2)
+                        check_23_2 = np.array([])
+                        check_23_2 = np.append(check_23_2, puzzle_new)
+                        check_23_2 = np.reshape(check_23_2,(4,4))
+                        check_23_2[x][y] = check_23_2[x][y-1]
+                        check_23_2[x][y-1] = 0
+                        manhat_check_23_2 = MAIN_FUNCTION(check_23_2)
+                        check_24_2 = np.array([])
+                        check_24_2 = np.append(check_24_2, puzzle_new)
+                        check_24_2 = np.reshape(check_24_2,(4,4))
+                        check_24_2[x][y] = check_24_2[x][y+1]
+                        check_24_2[x][y+1] = 0
+                        manhat_check_24_2 = MAIN_FUNCTION(check_24_2)
+                        manhat_check_21_2_22_23_24 = min(manhat_check_21_2, manhat_check_22_2, manhat_check_23_2, manhat_check_24_2)
+                        if manhat_check_21_2_22_23_24 == manhat_check_21_2:
+                            puzzle_new = check_21_2
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                        elif manhat_check_21_2_22_23_24 == manhat_check_22_2:
+                            puzzle_new = check_22_2
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                        elif manhat_check_21_2_22_23_24 == manhat_check_23_2:
+                            puzzle_new = check_23_2
+                            print(puzzle_new)
+                            if manhat == 0:
+                                break
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                        elif manhat_check_21_2_22_23_24 == manhat_check_24_2:
+                            puzzle_new = check_24_2
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                    elif puzzle_new[x][y] == 0 and x == 2 and y == 1:
+                        check_21_3 = np.array([])
+                        check_21_3 = np.append(check_21_3, puzzle_new)
+                        check_21_3 = np.reshape(check_21_3,(4,4))
+                        check_21_3[x][y] = check_21_3[x-1][y]
+                        check_21_3[x-1][y] = 0
+                        manhat_check_21_3 = MAIN_FUNCTION(check_21_3)
+                        check_22_3 = np.array([])
+                        check_22_3 = np.append(check_22_3, puzzle_new)
+                        check_22_3 = np.reshape(check_22_3,(4,4))
+                        check_22_3[x][y] = check_22_3[x+1][y]
+                        check_22_3[x+1][y] = 0
+                        manhat_check_22_3 = MAIN_FUNCTION(check_22_3)
+                        check_23_3 = np.array([])
+                        check_23_3 = np.append(check_23_3, puzzle_new)
+                        check_23_3 = np.reshape(check_23_3,(4,4))
+                        check_23_3[x][y] = check_23_3[x][y-1]
+                        check_23_3[x][y-1] = 0
+                        manhat_check_23_3 = MAIN_FUNCTION(check_23_3)
+                        check_24_3 = np.array([])
+                        check_24_3 = np.append(check_24_3, puzzle_new)
+                        check_24_3 = np.reshape(check_24_3,(4,4))
+                        check_24_3[x][y] = check_24_3[x][y+1]
+                        check_24_3[x][y+1] = 0
+                        manhat_check_24_3 = MAIN_FUNCTION(check_24_3)
+                        manhat_check_21_3_22_23_24 = min(manhat_check_21_3, manhat_check_22_3, manhat_check_23_3, manhat_check_24_3)
+                        if manhat_check_21_3_22_23_24 == manhat_check_21_3:
+                            puzzle_new = check_21_3
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                        elif manhat_check_21_3_22_23_24 == manhat_check_22_3:
+                            puzzle_new = check_22_3
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                        elif manhat_check_21_3_22_23_24 == manhat_check_23_3:
+                            puzzle_new = check_23_3
+                            print(puzzle_new)
+                            if manhat == 0:
+                                break
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                        elif manhat_check_21_3_22_23_24 == manhat_check_24_3:
+                            puzzle_new = check_24_3
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                    elif puzzle_new[x][y] == 0 and x == 2 and y == 2:
+                        check_21_4 = np.array([])
+                        check_21_4 = np.append(check_21_4, puzzle_new)
+                        check_21_4 = np.reshape(check_21_4,(4,4))
+                        check_21_4[x][y] = check_21_4[x-1][y]
+                        check_21_4[x-1][y] = 0
+                        manhat_check_21_4 = MAIN_FUNCTION(check_21_4)
+                        check_22_4 = np.array([])
+                        check_22_4 = np.append(check_22_4, puzzle_new)
+                        check_22_4 = np.reshape(check_22_4,(4,4))
+                        check_22_4[x][y] = check_22_4[x+1][y]
+                        check_22_4[x+1][y] = 0
+                        manhat_check_22_4 = MAIN_FUNCTION(check_22_4)
+                        check_23_4 = np.array([])
+                        check_23_4 = np.append(check_23_4, puzzle_new)
+                        check_23_4 = np.reshape(check_23_4,(4,4))
+                        check_23_4[x][y] = check_23_4[x][y-1]
+                        check_23_4[x][y-1] = 0
+                        manhat_check_23_4 = MAIN_FUNCTION(check_23_4)
+                        check_24_4 = np.array([])
+                        check_24_4 = np.append(check_24_4, puzzle_new)
+                        check_24_4 = np.reshape(check_24_4,(4,4))
+                        check_24_4[x][y] = check_24_4[x][y+1]
+                        check_24_4[x][y+1] = 0
+                        manhat_check_24_4 = MAIN_FUNCTION(check_24_4)
+                        manhat_check_21_4_22_23_24 = min(manhat_check_21_4, manhat_check_22_4, manhat_check_23_4, manhat_check_24_4)
+                        if manhat_check_21_4_22_23_24 == manhat_check_21_4:
+                            puzzle_new = check_21_4
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                        elif manhat_check_21_4_22_23_24 == manhat_check_22_4:
+                            puzzle_new = check_22_4
+                            print(puzzle_new)
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                            if manhat == 0:
+                                break
+                        elif manhat_check_21_4_22_23_24 == manhat_check_23_4:
+                            puzzle_new = check_23_4
+                            print(puzzle_new)
+                            if manhat == 0:
+                                break
+                            manhat = MAIN_FUNCTION(puzzle_new)
+                            print(manhat)
+                        elif manhat_check_21_4_22_23_24 == manhat_check_24_4:
+                            puzzle_new = check_24_4
                             print(puzzle_new)
                             manhat = MAIN_FUNCTION(puzzle_new)
                             print(manhat)
