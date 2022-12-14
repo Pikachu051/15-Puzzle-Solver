@@ -19,3 +19,6 @@
  2. Wait for the results.
  
  3. Done
+
+# Limitation
+ With the Manhattan solving method, there is a limitation that the problem to solve must not be complex. We added many conditions but there are some problems that can't be solved by our program.
